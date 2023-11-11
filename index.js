@@ -1,22 +1,24 @@
 // code your solution here
-function saturdayFun(activity){
-    if (activity === undefined){
-        return 'This Saturday, I want to roller-skate!';
-    } else {
-        return 'This Saturday, I want to bathe my dog!';
-    }
-}
 
-function mondayWork(activity2){
-    if (activity2 === undefined){
-        return 'This Monday, I will go to the office.';
-    } else {
-        return 'This Monday, I will work from home.';
-    }
-}
+function saturdayFun(activity = "roller-skate"){
+    return `This Saturday, I want to ${activity}!`;
+};
+console.log(saturdayFun());
+console.log(saturdayFun("bathe my dog"));
 
-function wrapAdjective(flair){
-    return function(adjective="special"){
+function mondayWork(activityTwo = "go to the office"){
+    return `This Monday, I will ${activityTwo}.`;
+};
+console.log(mondayWork());
+console.log(mondayWork("work from home"));
+
+
+function wrapAdjective(flair = "*"){
+    return function (adjective = "special"){
         return `You are ${flair}${adjective}${flair}!`;
     };
 }
+const wrapStar = wrapAdjective("*");
+console.log(wrapStar("a hard worker"));
+const wrapLine = wrapAdjective("||");
+console.log(wrapLine("a dedicated programmer"));
